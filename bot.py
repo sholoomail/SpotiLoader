@@ -353,11 +353,15 @@ async def callbacks(bot: Client, updatex: CallbackQuery):
         if '|' in url:
             spurl, yturl = url.split('|')
             url = yturl.strip()+'|'+spurl.strip()
+        else:
+            spurl = url
         to_run=f"spotdl {url}{of}{uy}{pt}"
     else:
         if '|' in url:
             spurl, yturl = url.split('|')
             url = yturl.strip()+'|'+spurl.strip()
+        else:
+            spurl = url
         to_run=f"spotdl {url} --path-template '{rndm}" + "/{artist}/{album}/{artist} - {title}.{ext}'"
     os.mkdir(dirs)
     xx = re.findall(r'(track|album|artist|playlist)', spurl, re.M)[0].capitalize()
