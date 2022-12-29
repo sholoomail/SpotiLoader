@@ -3,4 +3,5 @@ tgcrypto
 spotdl
 motor
 dnspython
-pyromod
+pyromod==4.0
+ffmpeg
