@@ -350,11 +350,21 @@ async def callbacks(bot: Client, updatex: CallbackQuery):
             pt = f" --path-template '{rndm}/{stats['path_template']}'"
         else:
             pt = ''
+        if '|' in url:
+            spurl, yturl = url.split('|')
+            url = yturl.strip()+'|'+spurl.strip()
+        else:
+            spurl = url
         to_run=f"spotdl {url}{of}{uy}{pt}"
     else:
+        if '|' in url:
+            spurl, yturl = url.split('|')
+            url = yturl.strip()+'|'+spurl.strip()
+        else:
+            spurl = url
         to_run=f"spotdl {url} --path-template '{rndm}" + "/{artist}/{album}/{artist} - {title}.{ext}'"
     os.mkdir(dirs)
-    xx = re.findall(r'(track|album|artist|playlist)', url, re.M)[0].capitalize()
+    xx = re.findall(r'(track|album|artist|playlist)', spurl, re.M)[0].capitalize()
     await runcmd(to_run)
     art_list = os.listdir(dirs)
     if cb_data == 'zip':
@@ -380,7 +390,7 @@ async def callbacks(bot: Client, updatex: CallbackQuery):
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 await bot.send_audio(chat_id=update.from_user.id, audio=music)
-    await update.reply(f'Successfully uploaded {x} from a Spotify {xx} [ㅤ]({url})', parse_mode='markdown')
+    await update.reply(f'Successfully uploaded {x} from a Spotify {xx} [ㅤ]({spurl})', parse_mode='markdown')
     shutil.rmtree(dirs)
 
 

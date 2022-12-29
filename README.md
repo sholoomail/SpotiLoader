@@ -7,6 +7,7 @@ Telegram bot to upload spotify playlist/artist/album/track music file to telegra
 
 - Upload Spotify Playlist/Artist/Album/Track as ZIP (Zipped Folder)
 - Upload Spotify Playlist/Artist/Album/Track as Music (Uploaded One By One)
+- Upload YouTube link with Spotify metadata. ex: `spotify-link | youtube-link`
 
 ### Commands:
 
