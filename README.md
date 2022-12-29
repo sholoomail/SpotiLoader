@@ -16,6 +16,10 @@ Telegram bot to upload spotify playlist/artist/album/track music file to telegra
 - `/help` : Show help message 
 - `/start` : Show start message 
 
+### Deploy To Render (Paid)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?)
+
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sholoomail/SpotiLoader)
 
